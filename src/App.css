@@ -1,33 +1,94 @@
-.App {
-  text-align: center;
+.brand-logo .material-icons {
+  font-size: 3rem;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.spinner__container {
+  margin: 5rem auto;
+  width: 200px;
+  height: 200px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+.spinner__container .spinner {
+  width: 25px;
+  height: 25px;
+  margin: 0 0.5rem;
+  border-radius: 50%;
+  background-color: #0091ea;
+  transform: translateY(-4rem);
+  animation: spin 0.3s ease-in-out infinite alternate forwards;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.spinner__container::after {
+  content: 'Loading...';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+}
+
+.spinner__container .spinner:nth-of-type(1) {
+  animation-delay: 0;
+}
+.spinner__container .spinner:nth-of-type(2) {
+  animation-delay: 0.15s;
+}
+.spinner__container .spinner:nth-of-type(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes spin {
+  0% {
+    transform: translateY(-2rem);
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    transform: translateY(2rem);
   }
+}
+
+.track {
+  margin-top: 2rem;
+}
+
+.track__name {
+  margin: 0;
+  padding: 0;
+  padding-left: 1rem;
+  border-left-color: #0091ea;
+  color: grey;
+  margin-bottom: 1rem !important;
+}
+
+.track__detail {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.track__detail span {
+  margin-left: 0.6rem;
+}
+
+.play {
+  color: #0091ea;
+  margin-left: -0.7rem;
+  margin-right: 0.5rem;
+  font-size: 2rem;
+}
+
+.custom__btn {
+  margin-left: 2rem;
+}
+
+.card__header {
+  display: flex;
+}
+
+.card__header img {
+  width: 20% !important;
 }
